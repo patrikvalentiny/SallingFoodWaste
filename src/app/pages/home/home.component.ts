@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {TokenInputComponent} from "../../components/token-input/token-input.component";
+import {StoreClearancesComponent} from "../../components/store-clearences/store-clearances.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    TokenInputComponent
+    TokenInputComponent,
+    StoreClearancesComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent{
 
 }
