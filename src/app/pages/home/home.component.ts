@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {TokenInputComponent} from "../../components/token-input/token-input.component";
-import {StoreClearancesComponent} from "../../components/store-clearences/store-clearances.component";
+import {StoreClearancesComponent} from "../../components/store-clearances/store-clearances.component";
 
 @Component({
   selector: 'app-home',

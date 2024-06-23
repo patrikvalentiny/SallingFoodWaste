@@ -47,6 +47,6 @@ export class StoreClearancesComponent implements OnInit{
   addStore(name:string, id:string) {
     const store:Store = {name:name, id:id};
     this.stores.push(store);
-    this.storageService.setItemByKey(StorageKey.STORES, JSON.stringify([...this.stores, store]));
+    this.storageService.setItemByKey(StorageKey.STORES, JSON.stringify(this.stores));
   }
 }
