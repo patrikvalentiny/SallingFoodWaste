@@ -1,8 +1,23 @@
 <div class="flex flex-col gap-4 p-2 ">
   <div class="flex flex-row  gap-2 w-full">
-    <input class="input input-primary w-full" type="text" placeholder="Enter store ID here"
+    <input class="input input-secondary w-full" type="text" placeholder="Enter store name here"
+           [formControl]="storeNameInput"/>
+    <input class="input input-secondary w-full" type="text" placeholder="Enter store ID here"
            [formControl]="storeIdInput"/>
-    <button class="btn btn-primary" (click)="getClearances()" [disabled]="!storeIdInput.valid">Get Clearances</button>
+    <button class="btn btn-secondary" (click)="addStoreButton()" [disabled]="!storeIdInput.valid">Add Store</button>
+  </div>
+  <div>
+    <div class="w-full flex flex-row gap-2">
+      <select class="select select-primary w-full" [formControl]="storeSelect">
+        @for (store of stores; track store.id) {
+          <option [selected]="store.id === storeSelect.value" [ngValue]="store.id">{{ store.name }}</option>
+        }
+      </select>
+      <button class="btn btn-primary" (click)="getClearances()" [disabled]="!storeSelect.valid">Get Clearances
+      </button>
+    </div>
+    <p>{{ storeSelect.value }}</p>
+
   </div>
   <div class="flex flex-row flex-wrap gap-4">
     @for (clearance of clearances; track clearance.offer.ean) {

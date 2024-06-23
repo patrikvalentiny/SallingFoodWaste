@@ -1,12 +1,13 @@
 import {Component, Input} from '@angular/core';
 import {Clearance} from "../../models/clearance";
-import {NgOptimizedImage} from "@angular/common";
+import {DatePipe, NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-offer-card',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    DatePipe
   ],
   templateUrl: './offer-card.component.html',
   styleUrl: './offer-card.component.css'

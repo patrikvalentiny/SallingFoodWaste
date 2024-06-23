@@ -1,11 +1,11 @@
 export interface Store {
-  address: Address
-  brand: string
-  coordinates: number[]
-  hours: Hour[]
+  address?: Address
+  brand?: string
+  coordinates?: number[]
+  hours?: Hour[]
   name: string
   id: string
-  type: string
+  type?: string
 }
 
 export interface Address {

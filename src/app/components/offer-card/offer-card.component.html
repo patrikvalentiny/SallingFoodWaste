@@ -11,9 +11,15 @@
   <div class="card-body items-center text-center">
     <h2 class="card-title">{{clearance.product.description}}</h2>
     <p>{{ clearance.product.categories.en }}</p>
-    <div class="flex flex-row justify-end gap-4 w-fit self-end items-center">
+    <div class="flex flex-row justify-between w-full">
+      <div class="flex flex-col justify-center items-start">
+        <p class="text-accent font-light">Offer End Date</p>
+        <p class="text-accent font-bold">{{clearance.offer.endTime | date: 'dd/MM/yyyy'}}</p>
+      </div>
+    <div class="flex flex-row justify-end gap-4 w-fit self-end">
       <p class="text-xl text-primary font-bold">{{clearance.offer.newPrice}} {{clearance.offer.currency}}</p>
       <p class="text-l font-light line-through">{{clearance.offer.originalPrice}} {{clearance.offer.currency}}</p>
+    </div>
     </div>
   </div>
 </div>
