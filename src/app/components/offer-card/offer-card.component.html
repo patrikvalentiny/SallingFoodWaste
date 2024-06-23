@@ -1,0 +1,19 @@
+<div class="card bg-base-300 min-w-96 shadow-xl h-full p-4">
+  <div class="badge badge-lg badge-secondary self-end">{{ clearance.offer.percentDiscount.toFixed(0) }}% Off</div>
+  <figure class="px-10 pt-10">
+    @if (clearance.product.image){
+      <img
+        src="{{clearance.product.image}}"
+        alt="Shoes"
+        class="rounded-xl"/>
+    }
+  </figure>
+  <div class="card-body items-center text-center">
+    <h2 class="card-title">{{clearance.product.description}}</h2>
+    <p>{{ clearance.product.categories.en }}</p>
+    <div class="flex flex-row justify-end gap-4 w-fit self-end items-center">
+      <p class="text-xl text-primary font-bold">{{clearance.offer.newPrice}} {{clearance.offer.currency}}</p>
+      <p class="text-l font-light line-through">{{clearance.offer.originalPrice}} {{clearance.offer.currency}}</p>
+    </div>
+  </div>
+</div>

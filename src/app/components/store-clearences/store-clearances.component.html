@@ -1,0 +1,12 @@
+<div class="flex flex-col gap-4 p-2 ">
+  <div class="flex flex-row  gap-2 w-full">
+    <input class="input input-primary w-full" type="text" placeholder="Enter store ID here"
+           [formControl]="storeIdInput"/>
+    <button class="btn btn-primary" (click)="getClearances()" [disabled]="!storeIdInput.valid">Get Clearances</button>
+  </div>
+  <div class="flex flex-row flex-wrap gap-4">
+    @for (clearance of clearances; track clearance.offer.ean) {
+      <app-offer-card class="flex-1" [clearance]="clearance"></app-offer-card>
+    }
+  </div>
+</div>

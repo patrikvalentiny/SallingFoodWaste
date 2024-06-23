@@ -1,4 +1,4 @@
-import {Component, inject, input} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {StorageKey, StorageService} from "../../services/storage.service";
 import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
 
@@ -10,15 +10,15 @@ import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
   ],
   template: `
   <div class="flex flex-row p-2 gap-2 w-full">
-    <input class="input input-primary w-full" type="text" placeholder="Enter your token here" [formControl]="tokenInput" />
-    <button class="btn btn-primary" (click)="setToken()" [disabled]="!tokenInput.valid">Submit</button>
+    <input class="input input-accent w-full" type="text" placeholder="Enter your token here" [formControl]="tokenInput" />
+    <button class="btn btn-accent" (click)="setToken()" [disabled]="!tokenInput.valid">Set</button>
   </div>
   `,
   styles: ``
 })
 export class TokenInputComponent {
   private readonly storageService = inject(StorageService);
-  tokenInput :FormControl<string | null> = new FormControl(null, [Validators.required]);
+  tokenInput :FormControl<string | null> = new FormControl(this.storageService.getItemByKey(StorageKey.TOKEN), [Validators.required]);
 
   setToken() {
     this.storageService.setItemByKey(StorageKey.TOKEN, this.tokenInput.value!);

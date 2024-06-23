@@ -25,4 +25,5 @@ export class StorageService {
 export enum StorageKey {
   THEME = 'theme',
   TOKEN = 'token',
+  LAST_STORE_ID = 'lastStoreId'
 }
